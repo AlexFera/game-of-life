@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    margin: .5em 0 1em;
+}
+
+#grid {
+    margin: 1em auto 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+#grid td {
+    border: 1px solid gray;
+}
+
+@keyframes birth {
+    50% {
+        box-shadow: 0 0 0 99px green inset;
+    }
+}
+
+@keyframes death {
+    50% {
+        box-shadow: 0 0 0 99px red inset;
+    }
+}
+
+#grid input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: block;
+    border: 0;
+    width: 30px;
+    height: 30px;
+    background: white;
+}
+
+#grid input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 99px black inset;
+    animation: birth 1000ms;
+}
+
+#grid input[type="checkbox"] {
+    box-shadow: 0 0 0 99px white inset;
+    animation: death 1000ms;
+}
+
+button,
+.button {
+    padding: .4em .6em;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3em;
+    box-shadow: 0 1px 0 hsla(0, 0%, 100%, .7) inset, 0 .15em .1em -.1em rgba(0, 0, 0, .3);
+    background: linear-gradient(hsla(0, 0%, 100%, .3), hsla(0, 0%, 100%, 0)) hsl(80, 80%, 35%);
+    color: white;
+    text-shadow: 0 -.05em .05em rgba(0, 0, 0, .3);
+    font: inherit;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+}
+
+button:enabled:active,
+.button:active,
+input[type="checkbox"]:checked+label.button {
+    background-image: none;
+    box-shadow: 0 .1em .3em rgba(0, 0, 0, .5) inset;
+}
+
+button:disabled {
+    background-color: hsl(80, 20%, 40%);
+    cursor: not-allowed;
+}
+
+#autoplay {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}

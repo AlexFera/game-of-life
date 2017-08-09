@@ -1,0 +1,3 @@
+Conway's game of life using HTML, JavaScript and CSS.
+
+- no Canvas, using only HTML elements (checkboxes)
